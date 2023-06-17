@@ -31,7 +31,7 @@ func (h *Handler) CreateGrade(c *gin.Context) {
 }
 
 func (h *Handler) GetGrades(c *gin.Context) {
-	id, err := strconv.Atoi(c.Param("hotelId"))
+	id, err := strconv.Atoi(c.Param("studentId"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err)
 		return
