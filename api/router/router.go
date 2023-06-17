@@ -2,7 +2,6 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"order/internal/dish"
 )
 
 var r *gin.Engine
