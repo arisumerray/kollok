@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not initialize database connection: %s", err)
 	}
-
+	// New Repo Instance
 	dishRep := dish.NewRepository(dbConn.GetDB())
 	dishSvc := dish.NewService(dishRep)
 	dishHandler := dish.NewHandler(dishSvc)
