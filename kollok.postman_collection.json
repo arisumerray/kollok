@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"nugget\",\n    \"description\": \"Nice nuggets!\",\n    \"price\": 50,\n    \"quantity\": 10,\n    \"is_available\": true\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"nugget\",\n    \"description\": \"Nice nuggets!\",\n    \"price\": 50,\n    \"quantity\": 10,\n    \"is_available\": true\n}",
+					"raw": "{\n    \"name\": \"alisa\",\n    \"age\": 20,\n    \"spec\": \"SE\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -75,7 +75,36 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"hotel_id\": 1,\n    \"arrival\": \"2023-01-02T15:00:00Z00:00\",\n    \"departure\": \"2023-01-05T15:00:00Z00:00\"\n}",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/grades/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"grades",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create grade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_id\": 1,\n    \"subject\": \"math\",\n    \"grade\": 10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,54 +120,6 @@
 					"port": "8081",
 					"path": [
 						"grades"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create grade",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/reviews/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"reviews",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create review",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"hotel_id\": 1,\n    \"body\": \"nice\",\n    \"rating\": 4\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/reviews",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"reviews"
 					]
 				}
 			},
