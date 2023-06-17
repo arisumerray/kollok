@@ -1,21 +1,22 @@
 package router
 
 import (
+	"api/internal/grade"
+	"api/internal/student"
 	"github.com/gin-gonic/gin"
 )
 
 var r *gin.Engine
 
-func InitRouter(dishHandler *dish.Handler) {
+func InitRouter(studentHandler *student.Handler, gradeHandler *grade.Handler) {
 	r = gin.Default()
 
 	r.Use(CORS())
 
-	r.GET("/get_dish", dishHandler.GetDish)
-	r.GET("/get_dishes", dishHandler.GetAll)
-	r.POST("/create_dish", dishHandler.CreateDish)
-	r.PUT("/update_dish", dishHandler.UpdateDish)
-	r.DELETE("/delete_dish", dishHandler.DeleteDish)
+	r.GET("/students", studentHandler.GetStudents)
+	r.POST("/students", studentHandler.CreateStudent)
+	r.GET("/grades/:studentId", gradeHandler.GetGrades)
+	r.POST("/grades", gradeHandler.CreateGrade)
 }
 
 func Start(addr string) error {

@@ -1,10 +1,11 @@
 package main
 
 import (
+	"api/db"
+	"api/internal/grade"
+	"api/internal/student"
+	"api/router"
 	"log"
-	"order/db"
-	"order/internal/dish"
-	"order/router"
 )
 
 // hello world
@@ -14,11 +15,16 @@ func main() {
 		log.Fatalf("could not initialize database connection: %s", err)
 	}
 	// New Repo Instance
-	dishRep := dish.NewRepository(dbConn.GetDB())
-	dishSvc := dish.NewService(dishRep)
-	dishHandler := dish.NewHandler(dishSvc)
 
-	router.InitRouter(dishHandler)
+	studentRep := student.NewRepository(dbConn.GetDB())
+	studentSvc := student.NewService(studentRep)
+	studentHandler := student.NewHandler(studentSvc)
+
+	gradeRep := grade.NewRepository(dbConn.GetDB())
+	gradeSvc := grade.NewService(gradeRep)
+	gradeHandler := grade.NewHandler(gradeSvc)
+
+	router.InitRouter(studentHandler, gradeHandler)
 	err = router.Start("0.0.0.0:8081")
 	if err != nil {
 		return
